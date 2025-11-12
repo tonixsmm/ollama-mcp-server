@@ -1,7 +1,24 @@
 {
-  "mcpServers": {},
-  "defaultProvider": "ollama",
-  "defaultModel": "llama3.2:latest",
+  "mcpServers": {
+    "ollama_mcp": {
+      "name": "ollama_mcp",
+      "command": "fastmcp",
+      "args": [
+        "run",
+        "ollama_mcp.py"
+      ],
+      "env": {
+        "OLLAMA_HOST": "http://localhost:11434",
+        "PATH": "/Users/tony/Downloads/google-cloud-sdk/bin:/Users/tony/.nvm/versions/node/v21.2.0/bin:/Users/tony/anaconda3/envs/rag_llm/bin:/Users/tony/anaconda3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/share/dotnet:~/.dotnet/tools",
+        "PYTHONWARNINGS": "ignore",
+        "LOG_LEVEL": "WARNING",
+        "CHUK_LOG_LEVEL": "WARNING",
+        "MCP_LOG_LEVEL": "WARNING"
+      }
+    }
+  },
+  "defaultProvider": "openai",
+  "defaultModel": "gpt-4",
   "theme": "default",
   "verbose": true,
   "confirmTools": true

@@ -103,10 +103,10 @@ async def list_models() -> str:
             data = response.json()
             models = [m["name"] for m in data.get("models", [])]
             if not models:
-                return "⚠️ No Ollama models installed. Use `ollama pull <model>` to add one."
+                return "No Ollama models installed. Use `ollama pull <model>` to add one."
             return "🧠 Available Ollama Models:\n" + "\n".join(f"- {m}" for m in models)
         except httpx.HTTPError as e:
-            return f"❌ Failed to connect to Ollama at {OLLAMA_HOST}: {str(e)}"
+            return f"Failed to connect to Ollama at {OLLAMA_HOST}: {str(e)}"
 
 def read_csv_with_encoding(file_path: Path) -> pd.DataFrame:
     """
@@ -409,5 +409,5 @@ async def generate_with_ollama(
 
 # Run MCP server
 if __name__ == "__main__":
-    # mcp.run()
-    mcp.run(transport="http", host="localhost", port=8765)
+    mcp.run()
+    # mcp.run(transport="http", host="localhost", port=8765) # comment out to use locally
