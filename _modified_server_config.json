@@ -1,0 +1,8 @@
+{
+  "mcpServers": {},
+  "defaultProvider": "ollama",
+  "defaultModel": "llama3.2:latest",
+  "theme": "default",
+  "verbose": true,
+  "confirmTools": true
+}
